@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+
 module.exports = (sequelize, DataTypes) => {
   class Ticket extends Model {
     /**
@@ -15,20 +17,20 @@ module.exports = (sequelize, DataTypes) => {
   }
   Ticket.init({
     subject: {
-      types : DataTypes.STRING,
+      type : DataTypes.STRING,
       allowNull : false
       
     },
     content: {
-      types : DataTypes.STRING,
+      type : DataTypes.STRING,
       allowNull : false
     },
     recepientEmail: {
-      types : DataTypes.STRING,
+      type : DataTypes.STRING,
       allowNull : false
     },
     status: {
-      types : DataTypes.ENUM,
+      type : DataTypes.ENUM,
       values : ['FAILED','SUCCESS', 'PENDING'],
       defaultValue:'PENDING'
     },
